@@ -1,5 +1,6 @@
 import { CompanyInfo, YahooSearchResult } from "../models/search.model";
 import fetch from 'node-fetch';
+import { checkStatus } from "./common";
 
 export const getInfoByTicker = async (ticker: string) => {
     try {
@@ -34,14 +35,5 @@ export const getInfoByTicker = async (ticker: string) => {
 
     } catch (error) {
         console.error(error);
-    }
-}
-
-const checkStatus = (res: any) => {
-    if(res.ok){
-        return res;
-    } else {
-        console.error(JSON.stringify(res));
-        throw 'Server Error'
     }
 }

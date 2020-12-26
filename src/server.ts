@@ -1,5 +1,5 @@
 import express from 'express';
-import { searchRoutes } from './routes/search.routes';
+import { router } from './routes';
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.get('/about', (request, response) => {
     response.end('<h1>About</h1>');
 })
 
-app.use('/api', searchRoutes);
+app.use('/api', router);
 
 const PORT:string = '5000';
 
