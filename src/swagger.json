@@ -1,0 +1,91 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "0.0.1",
+      "title": "Finbots API",
+      "description": "The best FinBots project ever",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:5000",
+    "basePath": "/api/",
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/search/yahoo/{ticker}": {
+        "parameters": [
+            {
+            "name": "ticker",
+            "in": "path",
+            "required": true,
+            "description": "Ticker",
+            "type": "string"
+            }
+        ],
+        "get": {
+          "tags": [
+            "Search"
+          ],
+          "summary": "Search security by ticker",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/analyze/{country}/{exchange}/{ticker}/{period}": {
+        "parameters": [
+            {
+                "name": "country",
+                "in": "path",
+                "required": true,
+                "description": "Country",
+                "type": "string"
+            },
+            {
+                "name": "exchange",
+                "in": "path",
+                "required": true,
+                "description": "Echange",
+                "type": "string"
+            },
+            {
+                "name": "ticker",
+                "in": "path",
+                "required": true,
+                "description": "Ticker",
+                "type": "string"
+            },
+            {
+                "name": "period",
+                "in": "path",
+                "required": true,
+                "description": "Period",
+                "type": "string"
+            }
+        ],
+        "get": {
+          "tags": [
+            "Trade"
+          ],
+          "summary": "Get financial advice",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {}
+  }
